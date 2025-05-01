@@ -33,8 +33,8 @@ def contact(request):
         # send the email
         subject = f"New message from {name}"
         plain_message = f"Name: {name}\nEmail: {email}\nMessage: {message}"
-        # recipient_list = ["izuchukwukorie@gmail.com", "nwaforglory6@gmail.com"]
-        recipient_list = ["nwaforglory6@gmail.com"]
+        recipient_list = ["izuchukwukorie@gmail.com"]
+        # recipient_list = ["nwaforglory6@gmail.com"]
         send_text_mail(subject, plain_message, recipient_list)
         # user sjango messages to send the user a success message
         messages.success(request, "Your message has been sent successfully.")
