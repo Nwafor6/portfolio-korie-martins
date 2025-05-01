@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block meta %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Xtra Blog</title>
+	<link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"> <!-- https://fontawesome.com/ -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/templatemo-xtra-blog.css' %}" rel="stylesheet">
+
+{% endblock %}
+	
+ 
+{% block content %}         
+    <div class="row tm-row tm-mb-45">
+        <div class="col-12">
+            <hr class="tm-hr-primary tm-mb-55">
+            <img src="{% static 'img/korie_1.jpeg' %}" alt="Image" class="img-fluid">
+        </div>
+    </div>
+    <div class="row tm-row tm-mb-40">
+        <div class="col-12">                    
+            <div class="mb-4">
+                <h2 class="pt-2 tm-mb-40 tm-color-primary tm-post-title">About Me</h2>
+                <p>
+                    As a passionate geoscientist, I specialize in building innovative solutions in subsurface modeling and spatial analysis for mineral exploration, environmental studies, and groundwater management.
+                </p>
+                <p>
+                    I thrive in goal-oriented teams and focus on creating clean, maintainable, and scalable 2D and 3D models. I integrate geological modeling software with Python programming to deliver effective, data-driven results.
+                </p>                            
+            </div>                    
+        </div>
+    </div>
+    <div class="row tm-row tm-mb-120">
+        <div class="col-lg-4 tm-about-col">
+            <div class="tm-bg-gray tm-about-pad">
+                <div class="text-center tm-mt-40 tm-mb-60">
+                    <i class="fas fa-bezier-curve fa-4x tm-color-primary"></i>                            
+                </div>                        
+                <h2 class="mb-3 tm-color-primary tm-post-title">Problem Solving</h2>
+                <p class="mb-0 tm-line-height-short">
+                    I approach challenges with a creative mindset, using both analytical and practical methods to identify and implement effective solutions. 
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-4 tm-about-col">
+            <div class="tm-bg-gray tm-about-pad">
+                <div class="text-center tm-mt-40 tm-mb-60">
+                    <i class="fas fa-users-cog fa-4x tm-color-primary"></i>                            
+                </div>                        
+                <h2 class="mb-3 tm-color-primary tm-post-title">Teamwork</h2>
+                <p class="mb-0 tm-line-height-short">
+                    I excel in working within diverse, goal-driven teams, contributing ideas and coordinating efforts to achieve collective objectives.
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-4 tm-about-col">
+            <div class="tm-bg-gray tm-about-pad">
+                <div class="text-center tm-mt-40 tm-mb-60">
+                    <i class="fab fa-creative-commons-sampling fa-4x tm-color-primary"></i>                            
+                </div>                        
+                <h2 class="mb-3 tm-color-primary tm-post-title">Adaptability</h2>
+                <p class="mb-0 tm-line-height-short">
+                    In a rapidly evolving field like geoscience, staying flexible and open to new technologies is essential. I continuously update my skills by integrating emerging tools.
+                </p>
+            </div>
+        </div>
+    </div>            
+  
+{% endblock %}     
+
+{% block scripts %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/templatemo-script.js' %}"></script>
+{% endblock %}

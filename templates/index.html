@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block meta %}
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Xtra Blog</title>
+	<link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}"> <!-- https://fontawesome.com/ -->
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/templatemo-xtra-blog.css' %}" rel="stylesheet">
+    <style>
+        .tm-post-link-inner img {
+            height: 200px; /* Set your desired height */
+            object-fit: cover; /* Ensures the image scales proportionally and fills the space */
+            width: 100%; /* Ensures the image spans the full width of its container */
+        }
+    </style>
+{% endblock %}
+	
+
+{% block content %}           
+    <div class="row tm-row">
+        {% for project in projects %}
+            <article class="col-12 col-md-6 tm-post">
+                <hr class="tm-hr-primary">
+                <a href="{% url 'project' project.id %}" class="effect-lily tm-post-link tm-pt-20">
+                    <div class="tm-post-link-inner">
+                        <img src="{{project.cover_image}}" alt="Image" class="img-fluid">
+                    </div>
+                    <h2 class="tm-pt-30 tm-color-primary tm-post-title">{{project.title}}</h2>
+                </a>                    
+                <p class="tm-pt-30_">
+                    {{project.content|safe|truncatewords:30}}
+                </p>
+            </article>
+        {% empty %}
+            <p>No project</p>
+        {%endfor%}
+    </div>
+    <div class="row tm-row tm-mt-100 tm-mb-75">
+        <div class="tm-prev-next-wrapper">
+            {% if projects.has_previous %}
+                <a href="?page={{ projects.previous_page_number }}" class="mb-2 tm-btn tm-btn-primary tm-prev-next tm-mr-20">Prev</a>
+            {% else %}
+                <a class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled tm-mr-20">Prev</a>
+            {% endif %}
+            
+            {% if projects.has_next %}
+                <a href="?page={{ projects.next_page_number }}" class="mb-2 tm-btn tm-btn-primary tm-prev-next">Next</a>
+            {% else %}
+                <a class="mb-2 tm-btn tm-btn-primary tm-prev-next disabled">Next</a>
+            {% endif %}
+        </div>
+        <div class="tm-paging-wrapper">
+            <span class="d-inline-block mr-3">Page</span>
+            <nav class="tm-paging-nav d-inline-block">
+                <ul>
+                    {% for page_num in projects.paginator.page_range %}
+                        <li class="tm-paging-item {% if page_num == projects.number %}active{% endif %}">
+                            <a href="?page={{ page_num }}" class="mb-2 tm-btn tm-paging-link">{{ page_num }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+    </div>  
+{% endblock %}       
+            
+{% block scripts %}
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/templatemo-script.js' %}"></script>
+{% endblock %}

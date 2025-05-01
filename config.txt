@@ -1,0 +1,42 @@
+# Django Setting with dummy values.
+
+SECRET_KEY=dummy-secret-key-1234567890
+DEBUG=True
+APP_ENV=development
+APP_NAME=wificombat
+
+# Allowed Hosts
+ADDITIONAL_ALLOWED_HOSTS=localhost,127.0.0.1
+
+# Push Notification
+PUSH_NOTIFICATION_URL=https://dummy-push-notification-url.com
+
+# Flutterwave Payment Gateway
+FLUTTERWAVE_PUBLIC_KEY=dummy-flutterwave-public-key
+FLUTTERWAVE_SECRET_KEY=dummy-flutterwave-secret-key
+FLUTTERWAVE_WEBHOOK_URL=https://dummy-flutterwave-webhook-url.com
+FLUTTERWAVE_SECRET_HASH=dummy-flutterwave-secret-hash
+
+# Database
+DATABASE_URL=postgres://user:password@localhost:5432/dbname
+
+# Redis (Cache and Celery)
+REDIS_URL=redis://localhost:6379/0
+REDIS_HOST=redis://localhost:6379
+CACHE_DRIVER=django_redis.cache.RedisCache
+
+# AWS S3 Storage
+AWS_ACCESS_KEY_ID=dummy-aws-access-key-id
+AWS_SECRET_ACCESS_KEY=dummy-aws-secret-access-key
+AWS_STORAGE_BUCKET_NAME=dummy-s3-bucket-name
+
+# Email Configuration
+MAIL_DRIVER=django.core.mail.backends.smtp.EmailBackend
+MAIL_HOST=smtp.dummy.com
+MAIL_PORT=587
+MAIL_USERNAME=dummy-email@example.com
+MAIL_PASSWORD=dummy-email-password
+MAIL_ENCRYPTION=tls
+
+# Logging (Optional, if not using default paths)
+LOG_DIR=/tmp

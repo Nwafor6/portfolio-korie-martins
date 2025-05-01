@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ project.title }}</h1>
+    {% if project.cover_image %}
+        <img src="{{ project.cover_image }}" alt="{{ project.title }} Cover" style="max-width: 100%;">
+    {% endif %}
+    <div>{{ project.content|safe }}</div>
+{% endblock %}
