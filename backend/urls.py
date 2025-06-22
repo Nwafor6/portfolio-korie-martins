@@ -29,4 +29,5 @@ urlpatterns = [
     path("upload/xxx", custom_upload_file, name="custom_upload_file"),
 ]
 if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
