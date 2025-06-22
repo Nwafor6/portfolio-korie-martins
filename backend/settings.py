@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    "daphne",
+    # "daphne",
     "django.contrib.staticfiles",
     # personal app
     "web.apps.WebConfig",
@@ -64,9 +64,9 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "rest_framework_simplejwt",
-    "corsheaders",
-    "channels",
-    "django_redis",
+    # "corsheaders",
+    # "channels",
+    # "django_redis",
     "storages",
     "django_ckeditor_5",
 ]
@@ -103,7 +103,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "backend.wsgi.application"
-ASGI_APPLICATION = "backend.asgi.application"
+# ASGI_APPLICATION = "backend.asgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
