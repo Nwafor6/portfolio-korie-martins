@@ -28,26 +28,8 @@ DEBUG = env("DEBUG", default=False)
 APP_ENV = env("APP_ENV", default="production")
 APP_NAME = env("APP_NAME")
 
-ALLOWED_HOSTS = ["https://6ssdb98twj.execute-api.eu-north-1.amazonaws.com"]
+ALLOWED_HOSTS = ["*"]
 
-
-# Add localhost and 127.0.0.1 for local development
-if DEBUG:
-    ALLOWED_HOSTS += ["127.0.0.1", "localhost"]
-
-ADDITIONAL_ALLOWED_HOSTS = os.getenv("ADDITIONAL_ALLOWED_HOSTS", default=None)
-
-
-# AUTH_USER_MODEL = "core.User"
-
-if ADDITIONAL_ALLOWED_HOSTS:
-    for host in ADDITIONAL_ALLOWED_HOSTS.split(","):
-        host = host.strip()
-        # Parse the URL and take out the domain if necessary
-        url = urlparse(host)
-        hostname = url.hostname if url.hostname else host
-        if hostname and hostname not in ALLOWED_HOSTS:
-            ALLOWED_HOSTS.append(hostname)
 
 INSTALLED_APPS = [
     "django.contrib.admin",
